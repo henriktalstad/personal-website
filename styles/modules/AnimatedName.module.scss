@@ -1,0 +1,48 @@
+/* ==========================================================================
+    AnimatedName
+========================================================================== */
+
+/* Global theme rules with extremely high specificity */
+html[data-theme="light"] body .c-animatedName,
+:global([data-theme="light"]) .c-animatedName {
+  color: #000000 !important;
+  
+  span, strong, div, p {
+    color: #000000 !important;
+  }
+}
+
+html[data-theme="dark"] body .c-animatedName,
+:global([data-theme="dark"]) .c-animatedName {
+  color: #ffffff !important;
+  
+  span, strong, div, p {
+    color: #ffffff !important;
+  }
+}
+
+.c-animatedName {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-left: 1rem;
+  vertical-align: middle;
+  text-transform: uppercase;
+
+  /* Force styles with important for all children */
+  span, div {
+    display: inline-block;
+    transition: color 0.2s;
+    color: inherit !important;
+  }
+
+  /* Hover state */
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      span, strong, div {
+        color: var(--primary-color) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// Theme CSS Variables
+:root {
+    // Experience component colors - Light Theme
+    --color-card-background: #ffffff;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-text: #333333;
+    --color-text-muted: #666666;
+    --color-foreground: #000000;
+    --color-skill-bg: #f0f0f0;
+    --color-skill-text: #333333;
+}
+
+html[data-theme="dark"] {
+    // Experience component colors - Dark Theme
+    --color-card-background: #1e1e1e;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-text: #e0e0e0;
+    --color-text-muted: #b0b0b0;
+    --color-foreground: #ffffff;
+    --color-skill-bg: #333333;
+    --color-skill-text: #f0f0f0;
+}

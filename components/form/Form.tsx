@@ -13,7 +13,7 @@ import FormInput from './FormInput';
 import FormTextarea from './FormTextarea';
 import FormRecaptchaNote from './FormRecaptchaNote';
 import Button from '../shared/Button';
-import { toast, ToastContainer, Zoom } from 'react-toastify';
+import { toast, ToastContainer, Zoom, Bounce } from 'react-toastify';
 import TranslateInOut from '../shared/gsap/TranslateInOut';
 import FadeInOut from '../shared/gsap/FadeInOut';
 import classNames from 'classnames';
@@ -289,7 +289,7 @@ export default function Form() {
                     </div>
                     {isMounted() &&
                         <ToastContainer
-                            position={toast.POSITION.BOTTOM_CENTER}
+                            position="bottom-center"
                             transition={Zoom}
                             className="c-toastify"
                         />

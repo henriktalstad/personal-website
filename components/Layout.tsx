@@ -1,4 +1,4 @@
-import { Layout } from '@/types/components/global';
+import type { Layout as LayoutProps } from '@/types/components/global';
 import { FOOTER, NAVIGATION_ROUTES } from '@/data/global.data';
 import { SOCIAL_MEDIAS } from '@/data/socialMedias.data';
 import { useRouter } from 'next-translate-routes';
@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 export default function Layout({
     children
-}: Layout) {
+}: LayoutProps) {
     const { locale } = useRouter();
 
     return (

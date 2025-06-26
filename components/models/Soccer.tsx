@@ -2,13 +2,13 @@ import { ModelProps } from '@/types/hobbies/models';
 import { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { Group } from 'three';
+import { Group, Mesh } from 'three';
 import { GLTF } from 'three-stdlib';
 
 export default function Soccer({
     visible
 }: ModelProps) {
-    const groupRef = useRef<THREE.Mesh & Group>(null);
+    const groupRef = useRef<Mesh & Group>(null);
     const { scene } = useGLTF('/static/models/soccer/soccer.glb') as unknown as GLTF;
     
     // Enklere animasjon som holder modellen stabil i visningen

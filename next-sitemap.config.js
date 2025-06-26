@@ -18,10 +18,10 @@ module.exports = {
     generateRobotsTxt: true,
     changefreq: 'monthly',
     priority: 0.7,
-    autoLastmod: true,
+    autoLastmod: false, // Set to false to use our custom lastmod
     sitemapSize: 7000,
     formatDate: 'yyyy-MM-dd',
-    spacing: '    ',
+    spacing: '  ', // Standard indentation
     xslUrl: 'sitemap.xsl',
     outDir: 'public',
     robotsTxtOptions: {
@@ -49,15 +49,16 @@ module.exports = {
             hreflang: locale === defaultLocale ? 'x-default' : locale
         }));
 
-        // Format the date properly
+        // Format the date properly for XML sitemap (use ISO format)
         const now = new Date();
         const formattedDate = now.toISOString();
 
+        // Make sure we return a properly structured sitemap entry
         return {
             loc: `${config.siteUrl}${translateUrl(basePath, detectedLocale)}`,
+            lastmod: formattedDate,
             changefreq: config.changefreq,
             priority: config.priority,
-            lastmod: formattedDate,
             alternateRefs
         };
     },

@@ -1,4 +1,4 @@
-import { TransitionLayout } from '@/types/components/global';
+import type { TransitionLayout as TransitionLayoutProps } from '@/types/components/global';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import useTransitionContext from '@/context/transitionContext';
@@ -10,7 +10,7 @@ import useIsomorphicLayoutEffect from '@/hooks/useIsomorphicLayoutEffect';
 
 export default function TransitionLayout({
     children
-}: TransitionLayout) {
+}: TransitionLayoutProps) {
     const router = useRouter();
     const [displayChildren, setDisplayChildren] = useState(children);
     const { timeline, resetTimeline, primaryEase, footerRef } = useTransitionContext();

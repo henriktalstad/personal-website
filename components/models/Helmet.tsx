@@ -2,13 +2,13 @@ import { ModelProps } from '@/types/hobbies/models';
 import { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { Group } from 'three';
+import { Group, Mesh } from 'three';
 import { GLTF } from 'three-stdlib';
 
 export default function Helmet({
     visible = true
 }: ModelProps) {
-    const groupRef = useRef<THREE.Mesh & Group>(null);
+    const groupRef = useRef<Mesh & Group>(null);
     const { scene } = useGLTF('/static/models/helmet/stormtrooper.glb') as unknown as GLTF;
 
     useFrame(() => {

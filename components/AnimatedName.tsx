@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import useWindowSize from "../hooks/useWindowSize";
 
 type AnimatedNameProps = {
     resolvedTheme?: string;
@@ -11,6 +12,7 @@ type AnimatedNameProps = {
 export default function AnimatedName({ resolvedTheme }: AnimatedNameProps) {
     const name = "Henrik Talstad";
     const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
+    const { isMobile } = useWindowSize();
 
     // Direkte fargevalg basert på tema
     const textColor = resolvedTheme === "dark" ? "#ffffff" : "#ffffff";
@@ -57,9 +59,9 @@ export default function AnimatedName({ resolvedTheme }: AnimatedNameProps) {
             style={{
                 display: "inline-block",
                 fontWeight: 700,
-                fontSize: "1.2rem",
+                fontSize: isMobile ? "1rem" : "1.2rem",
                 letterSpacing: "0.03em",
-                marginLeft: "1rem",
+                marginLeft: isMobile ? "0.5rem" : "1rem",
                 verticalAlign: "middle",
                 cursor: "pointer",
                 userSelect: "none",

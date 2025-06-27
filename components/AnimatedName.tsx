@@ -10,7 +10,8 @@ type AnimatedNameProps = {
 }
 
 export default function AnimatedName({ resolvedTheme }: AnimatedNameProps) {
-    const name = "Henrik Talstad";
+    const firstName = "Henrik";
+    const lastName = "Talstad";
     const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
     const { isMobile } = useWindowSize();
 
@@ -53,6 +54,25 @@ export default function AnimatedName({ resolvedTheme }: AnimatedNameProps) {
         });
     }, [hoverColor, textColor]); // Legg til textColor som avhengighet
 
+    // Helper function to create animated letters
+    const createAnimatedText = (text: string, startIndex: number) => {
+        return text.split("").map((char, i) => (
+            <span
+                key={`${startIndex + i}`}
+                ref={(el) => {
+                    letterRefs.current[startIndex + i] = el;
+                }}
+                style={{
+                    display: "inline-block",
+                    transition: "color 0.2s",
+                    color: textColor,
+                }}
+            >
+                {char}
+            </span>
+        ));
+    };
+
     return (
         <span
             className="u-text--center"
@@ -65,25 +85,20 @@ export default function AnimatedName({ resolvedTheme }: AnimatedNameProps) {
                 verticalAlign: "middle",
                 cursor: "pointer",
                 userSelect: "none",
-                color: textColor, // Eksplisitt farge basert på tema
+                color: textColor,
             }}
             aria-label="Henrik Talstad"
         >
-            {name.split("").map((char, i) => (
-                <span
-                    key={i}
-                    ref={(el) => {
-                        letterRefs.current[i] = el;
-                    }}
-                    style={{
-                        display: "inline-block",
-                        transition: "color 0.2s",
-                        color: textColor, // Samme eksplisitte farge på hver bokstav
-                    }}
-                >
-                    {char === " " ? "\u00A0" : char}
-                </span>
-            ))}
+            <div style={{ 
+                display: "flex", 
+                flexDirection: isMobile ? "column" : "row",
+                alignItems: isMobile ? "center" : "flex-start",
+            }}>
+                <div>{createAnimatedText(firstName, 0)}</div>
+                <div style={{ marginLeft: isMobile ? 0 : "0.25rem" }}>
+                    {createAnimatedText(lastName, firstName.length)}
+                </div>
+            </div>
         </span>
     );
 }

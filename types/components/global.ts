@@ -25,7 +25,17 @@ export type MetaDataProps = {
     title?: string;
     description?: string;
     image?: string;
+    imageWidth?: number;
+    imageHeight?: number;
+    imageAlt?: string;
     type?: string;
+    author?: string;
+    keywords?: string;
+    locale?: string;
+    siteName?: string;
+    themeColor?: string;
+    publishedAt?: string | null;
+    updatedAt?: string | null;
 }
 
 /* Navigation */

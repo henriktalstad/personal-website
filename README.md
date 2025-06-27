@@ -1,5 +1,5 @@
 <a href="https://www.henriktalstad.no">
-    <img alt="Henrik Talstad" src="https://github.com/henriktalstad/portfolio-webiste/blob/master/public/static/og-image-en.png?raw=true">
+    <img alt="Henrik Talstad" src="https://github.com/henriktalstad/personal-website/blob/master/public/og-image-en.png?raw=true">
 </a>
 
 <h1 align="center">Personal website</h1>

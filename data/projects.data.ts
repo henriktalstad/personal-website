@@ -20,6 +20,14 @@ export const META_PROJECTS: Lang<MetaDataProps> = {
 export const PROJECTS: Lang<Projects> = {
     en: [
         {
+            title: "Scoped Documentation",
+            description:
+                "Product documentation for Scoped with quick start and task guides.",
+            image: "/static/images/projects/docs-scoped.png",
+            url: "https://docs.scoped.no/",
+            buttonLabel: "Read docs",
+        },
+        {
             title: "Scoped Solutions",
             description:
                 "Data-driven property management tool that simplifies sustainability reporting, energy monitoring, and property analytics",
@@ -45,6 +53,14 @@ export const PROJECTS: Lang<Projects> = {
         },
     ],
     no: [
+        {
+            title: "Scoped Dokumentasjon",
+            description:
+                "Produktdokumentasjon for Scoped med kom-i-gang og oppgaveguider.",
+            image: "/static/images/projects/docs-scoped.png",
+            url: "https://docs.scoped.no/",
+            buttonLabel: "Les dokumentasjon",
+        },
         {
             title: "Scoped Solutions",
             description:
@@ -113,6 +129,27 @@ export const PERSONAL_PROJECTS: Lang<Projects> = {
 
 export const FEATURED_PROJECT: Lang<ProjectProps> = {
     en: {
+        title: "Scoped Documentation",
+        description:
+            "Product documentation for Scoped with quick start and task guides.",
+        image: "/static/images/projects/docs-scoped.png",
+        url: "https://docs.scoped.no/",
+        buttonLabel: "Read docs",
+        type: ProjectsType.PROJECTS,
+    },
+    no: {
+        title: "Scoped Dokumentasjon",
+        description:
+            "Produktdokumentasjon for Scoped med kom-i-gang og oppgaveguider.",
+        image: "/static/images/projects/docs-scoped.png",
+        url: "https://docs.scoped.no/",
+        buttonLabel: "Les dokumentasjon",
+        type: ProjectsType.PROJECTS,
+    },
+};
+
+export const FEATURED_PROJECT_2: Lang<ProjectProps> = {
+    en: {
         title: "Scoped Solutions",
         description:
             "Data-driven property management tool that simplifies sustainability reporting, energy monitoring, and property analytics",
@@ -145,7 +182,8 @@ export const LATEST_PERSONAL_PROJECT: Lang<ProjectProps> = {
     },
     no: {
         title: "Velvet Pour",
-        description: "Interaktiv cocktail-nettside med avanserte GSAP-animasjoner, dynamiske teksteffekter, parallax-rulling og scrollutløste effekter",
+        description:
+            "Interaktiv cocktail-nettside med avanserte GSAP-animasjoner, dynamiske teksteffekter, parallax-rulling og scrollutløste effekter",
         image: "/static/images/projects/velvet-pour.png",
         url: "https://gsap-cocktail-gamma.vercel.app/",
         githubUrl: "https://github.com/henriktalstad/gsap-cocktail",
